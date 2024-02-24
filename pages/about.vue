@@ -1,43 +1,27 @@
 <template>
   <div>
-    <v-app>
-      <v-content>
-        <v-container>
-          <v-card>
-            <v-card-title>
-              <h1>เกี่ยวกับระบบธนาคารหน่วยกิต</h1>
-            </v-card-title>
-            <v-card-text>
-              <p>เป็นระบบทะเบียนเฉพาะ สาหรับผู้ที่ต้องการสะสมหน่วยกิตหรือผลการเรียนรู้ โดยจัดให้มี ระเบียนหรือสมุดสะสมหน่วยกิต ให้สามารถนาผลการเรียน ผลการเรียนรู้จากแหล่งต่างๆ มาสะสมเป็นหน่วยกิตหรือผลการเรียนรู้ ฝากไว้ในธนาคารหน่วยกิตของหน่วยที่รับผิดชอบการสะสมหน่วย</p>
-              <p>ระบบธนาคารหน่วยกิตมีวัตถุประสงค์หลัก ดังนี้</p>
-              <ul>
-                <li>จัดเก็บข้อมูลการสะสมหน่วยกิตของผู้เรียนจากการศึกษาทุกระดับและทุกรูปแบบการศึกษา</li>
-                <li>จัดระบบการเทียบโอนหน่วยกิตระหว่างสถาบันการศึกษา</li>
-                <li>ให้บริการข้อมูลเกี่ยวกับระบบธนาคารหน่วยกิตแก่ผู้เรียน สถาบันการศึกษา และหน่วยงานที่เกี่ยวข้อง</li>
-              </ul>
-              <p>ระบบธนาคารหน่วยกิตประกอบด้วยองค์ประกอบหลัก 5 ส่วน ดังนี้</p>
-              <ol>
-                <li>หน่วยงานกลาง</li>
-                <li>สถาบันการศึกษา</li>
-                <li>ผู้เรียน</li>
-                <li>ระบบฐานข้อมูล</li>
-                <li>ระบบการเทียบโอนหน่วยกิต</li>
-              </ol>
-            </v-card-text>
-          </v-card>
-        </v-container>
-      </v-content>
-    </v-app>
+    <v-app-bar color="1E1E1E" dark>
+      <v-toolbar-title>
+        <v-img
+          max-height="80"
+          max-width="300"
+          class="ml-4"
+          :src="require('~/assets/mju_logo_FOOTER.png')"
+        >
+        </v-img>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <button class="mr-10" @click="homepage">หน้าหลัก</button>
+      <button class="mr-10" @click="news">ข่าวประชาสัมพันธ์</button>
+      <button class="mr-10" @click="services">ระบบสารสนเทศ</button>
+      <button class="mr-10" @click="about">เกี่ยวกับเรา</button>
+    <v-btn depressed color="success" @click="login"
+        >เข้าสู่ระบบ | Log in</v-btn
+      >
+    </v-app-bar>
+    <v-container>
+      <h1>เกี่ยวกับเรา</h1>
+      <h5>about</h5>
+    </v-container>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'AboutPage',
-  data () {
-    return {
-
-    }
-  }
-}
-</script>
