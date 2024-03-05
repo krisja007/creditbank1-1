@@ -3,7 +3,7 @@
     <v-img :aspect-ratio="19 / 1" :src="require('~/assets/b08knorpw71t.png')">
       <v-col cols="12" class="mt-8">
         <p class="display-2 text-center">
-          <span class="white--text">คลังหน่วยกิตมหาวิทยาลัยแม่โจ้</span>
+          <span class="white--text">ระบบสะสมหน่วยกิตมหาวิทยาลัยแม่โจ้</span>
         </p>
       </v-col></v-img
     >
@@ -13,25 +13,28 @@
         :src="require('~/assets/student-class-looking-course.png')"
       >
       </v-img>
-
-      <h1>หลักสูตรสะสมหน่วยกิต(Credit Bank)</h1>
-      <h4>
+    </v-container>
+    <v-container>
+<v-card depressed color="grey lighten-1">
+      <h1 class="ml-6">หลักสูตรสะสมหน่วยกิต(Credit Bank)</h1>
+      <h4 class="ml-6">
         การสะสมหน่วยการเรียนรู้ ( Credit Bank) หรือ ธนาคารหน่วยกิต
         เป็นการเปิดโอกาสให้ผู้เรียนและประชาชน
       </h4>
-      <h4>
+      <h4 class="ml-6">
         ได้เรียนและทำงานไปในเวลาเดียวกัน
         โดยสามารถนําผลการเรียนรู้ที่ได้จากประสบการณ์การทํางาน อาชีพ
       </h4>
-      <h4>
+      <h4 class="ml-6">
         หรือการฝึกอบรมเปิดสอนอยู่ทั้งในระดับปริญญาตรีและบัณฑิตศึกษาเป็นการตอบโจทย์นักเรียน
         นักศึกษา
       </h4>
-      <h4>
+      <h4 class="ml-6">
         และบุคคลทั่วไปที่มีแผนจะเข้ามาศึกษาต่อที่สถาบันฯ
         หรือผู้ที่สนใจเพิ่มพูนความรู้และพัฒนาทักษะตลอด
       </h4>
-      <h4>จนการเรียนรู้ตลอดชีพ</h4>
+      <h4 class="ml-6">จนการเรียนรู้ตลอดชีพ</h4>
+</v-card>
     </v-container>
     <v-container>
       <h4 class="ml-10 mt-10">คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</h4>
@@ -54,5 +57,5 @@
 export default {};
 </script>
 
-
+ 
 <style></style>
