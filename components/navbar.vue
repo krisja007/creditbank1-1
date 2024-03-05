@@ -13,7 +13,7 @@
       <v-spacer></v-spacer>
       <button class="mr-10" @click="homepage">หน้าหลัก</button>
       <button class="mr-10" @click="news">ข่าวประชาสัมพันธ์</button>
-      <button class="mr-10" @click="services">ระบบสารสนเทศ</button>
+      <button class="mr-10" @click="services">ระเบียบ ประกาศ ขอบังคับ</button>
       <button class="mr-10" @click="about">เกี่ยวกับเรา</button>
       <v-btn depressed color="success" @click="login"
         >เข้าสู่ระบบ | Log in</v-btn

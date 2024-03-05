@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-img :aspect-ratio="16 / 9" :src="require('~/assets/education.png')">
-        <h1 class="ml-10 mt-15">หลักสูตรการศึกษา</h1>
+        <h1 class="ml-10 mt-15">หลักสูตรการศึกษาตลอดชีวิต</h1>
         <v-btn class="ml-10 mt-3" depressed color="success"
           >เลือกหลักสูตร</v-btn
         >

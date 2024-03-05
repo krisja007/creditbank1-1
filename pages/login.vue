@@ -16,6 +16,15 @@
         elevation="8"
       >
         <v-card-text class="pb-0">
+          <div class="d-flex justify-center">
+            <v-img
+              max-height="100"
+              max-width="100"
+              class="text-center"
+              :src="require('~/assets/mju_logo.png')"
+            >
+            </v-img>
+          </div>
           <p class="title">เลขบัตรประจำตัวประชาชน 13 หลัก (Passport Number)</p>
           <v-text-field
             class="mt-9"
@@ -25,13 +34,23 @@
             v-model="citizenID"
             maxlength="13"
           ></v-text-field>
+
+          <v-text-field
+            class="mt-9"
+            outlined
+            label="กรุณากรอกรหัสผ่าน A - Z"
+
+            placeholder=""
+            :rules="passwordRules"
+            v-model="passwordID"
+          ></v-text-field>
         </v-card-text>
         <v-card-actions class="">
           <v-btn
             class="mx-auto mb-5 rounded-md"
             color="success"
             @click="checkUser"
-            ><v-icon>mdi mdi-magnify</v-icon>ตรวจสอบข้อมูลผู้ใช้</v-btn
+            ><v-icon>mdi mdi-import</v-icon>เข้าสู่ระบบ</v-btn
           >
         </v-card-actions>
       </v-card>
@@ -44,8 +63,16 @@ export default {
   name: "login",
   data() {
     return {
+
+      passwordRules: [
+        (v) => !!v || 'กรุณากรอกรหัสผ่าน',
+        (v) => (v && v.length >= 6) || 'กรุณากรอกรหัสผ่าน',
+         (v) => !/[\u0E00-\u0E7F]/.test(v) || 'กรุณากรอกรหัสผ่านเป็นภาษาอังกฤษเท่านั้น',
+      ],
       citizenID: "",
       checkCitizenId: "",
+      passwordID: "",
+      checkpassId: "",
     };
   },
   watch: {
@@ -76,5 +103,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
