@@ -29,7 +29,7 @@
         <v-card-actions class="">
           <v-btn
             class="mx-auto mb-5 rounded-md"
-            color="primary"
+            color="success"
             @click="checkUser"
             ><v-icon>mdi mdi-magnify</v-icon>ตรวจสอบข้อมูลผู้ใช้</v-btn
           >
