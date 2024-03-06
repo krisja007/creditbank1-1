@@ -27,7 +27,7 @@
           </div>
           <p class="title">เลขบัตรประจำตัวประชาชน 13 หลัก (Passport Number)</p>
           <v-text-field
-            class="mt-9"
+            class="mt-1"
             outlined
             label="กรุณากรอกเลขบัตรประชาชน"
             placeholder=""
@@ -36,22 +36,30 @@
           ></v-text-field>
 
           <v-text-field
-            class="mt-9"
+            class="mt-4"
             outlined
             label="กรุณากรอกรหัสผ่าน A - Z"
-
             placeholder=""
             :rules="passwordRules"
             v-model="passwordID"
           ></v-text-field>
         </v-card-text>
         <v-card-actions class="">
-          <v-btn
-            class="mx-auto mb-5 rounded-md"
-            color="success"
-            @click="checkUser"
-            ><v-icon>mdi mdi-import</v-icon>เข้าสู่ระบบ</v-btn
-          >
+          <v-row>
+            <v-col cols="12" class="text-left">
+              <a class="ml-4" @click="checkUser">ลืมรหัสผ่าน</a></v-col
+            >
+            <v-col cols="6" class="text-left">
+              <v-btn class="mb-7 rounded-md" color="success" @click="checkUser"
+                ><v-icon>mdi mdi-import</v-icon>เข้าสู่ระบบ</v-btn
+              ></v-col
+            >
+            <v-col cols="6" class="text-right">
+              <v-btn class="mb-7 rounded-md" color="success" @click="goRegister"
+                ><v-icon>mdi mdi-import</v-icon>สมัครผู้ใช้</v-btn
+              ></v-col
+            >
+          </v-row>
         </v-card-actions>
       </v-card>
     </v-col>
@@ -63,11 +71,12 @@ export default {
   name: "login",
   data() {
     return {
-
       passwordRules: [
-        (v) => !!v || 'กรุณากรอกรหัสผ่าน',
-        (v) => (v && v.length >= 6) || 'กรุณากรอกรหัสผ่าน',
-         (v) => !/[\u0E00-\u0E7F]/.test(v) || 'กรุณากรอกรหัสผ่านเป็นภาษาอังกฤษเท่านั้น',
+        (v) => !!v || "กรุณากรอกรหัสผ่าน",
+        (v) => (v && v.length >= 6) || "กรุณากรอกรหัสผ่าน",
+        (v) =>
+          !/[\u0E00-\u0E7F]/.test(v) ||
+          "กรุณากรอกรหัสผ่านเป็นภาษาอังกฤษเท่านั้น",
       ],
       citizenID: "",
       checkCitizenId: "",
@@ -98,6 +107,9 @@ export default {
     },
     checkUser() {
       this.checkCitizenId = this.citizenID.replace(/-/g, "");
+    },
+    goRegister() {
+      this.$router.push('/register')
     },
   },
 };

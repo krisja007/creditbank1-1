@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-index">
     <v-container>
       <v-img :aspect-ratio="16 / 9" :src="require('~/assets/education.png')">
         <h1 class="ml-10 mt-15">หลักสูตรการศึกษาตลอดชีวิต</h1>
@@ -21,7 +21,7 @@
       </v-img>
     </v-container>
     <v-container>
-      <h1 class="ml-5">ข่าวประชาสัมพันธ์</h1>
+      <h1 class="ml-5">รายวิชาที่กำลังเปิดให้ลงทะเบียน</h1>
       <v-row>
         <v-col v-for="n in 6" :key="n" class="d-flex child-flex" cols="4">
           <v-img
@@ -54,3 +54,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+</style>
