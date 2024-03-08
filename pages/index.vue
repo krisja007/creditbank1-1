@@ -3,7 +3,7 @@
     <v-container>
       <v-img :aspect-ratio="16 / 9" :src="require('~/assets/education.png')">
         <h1 class="ml-10 mt-15">หลักสูตรการศึกษาตลอดชีวิต</h1>
-        <v-btn class="ml-10 mt-3" depressed color="success"
+        <v-btn class="ml-10 mt-3" depressed color="success" @click="goSubject"
           >เลือกหลักสูตร</v-btn
         >
         <h4 class="ml-10 mt-10">คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</h4>
@@ -37,8 +37,8 @@
           align="center"
           justify="center"
         >
-          <div class="text-h2">
-            Slide {{ i + 1 }}
+          <div class="text">
+            รายวิชาที่กำลังเปิดให้ลงทะเบียน {{ i + 1 }}
           </div>
         </v-row>
       </v-sheet>
@@ -61,6 +61,7 @@
       ],
     }),
   }
+  
 </script>
 <style scoped>
 
