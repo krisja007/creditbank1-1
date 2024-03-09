@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <v-container>
-      <v-card>
-        <v-card-title class="ml-2">
-          สมัครเรียนแบบบุคคลภายนอก Credit Bank
-          กับมหาวิทยาลัยแม่โจ้</v-card-title
-        >
+  <div id="bg-image" :style="{ backgroundImage: `url(${backgroundUrl})` }">
+    <v-container class="d-flex justify-center">
+      <v-card max-width="800px" class="mt-10" elevation="8">
+        <v-card-title class="ml-2 justify-center display-1"
+          >ลงทะเบียน
+        </v-card-title>
         <v-card-text class="pb-0">
           <v-form ref="formReg">
             <v-row no-gutters>
@@ -17,6 +16,7 @@
                   item-text="name"
                   item-value="name"
                   label="คำนำหน้า"
+                  :rules="[(v) => !!v || 'กรอกคำนำหน้าให้ถูกโต้อง']"
                 ></v-select>
               </v-col>
               <v-col cols="6" md="5" class="px-2">
@@ -24,7 +24,7 @@
                   outlined
                   label="ชื่อ"
                   v-model="FIRSTNAME"
-                  :rules="[(v) => !!v || 'กรุณาเลือกลักษณะการใช้สิทธิ']"
+                  :rules="[(v) => !!v || 'กรอกชื่อให้ถูกต้อง']"
                 ></v-text-field>
               </v-col>
               <v-col cols="6" md="5" class="px-2">
@@ -32,6 +32,7 @@
                   outlined
                   label="นามสกุล"
                   v-model="LASTNAME"
+                  :rules="[(v) => !!v || 'กรอกนามสกุลให้ถูกต้อง']"
                 ></v-text-field>
               </v-col>
               <v-col cols="12" md="2" class="px-2">
@@ -42,6 +43,7 @@
                   item-text="name"
                   item-value="id"
                   v-model="levelC"
+                  :rules="[(v) => !!v || 'กรุณาเลือกระดับการศึกษา']"
                 ></v-select>
               </v-col>
               <v-col cols="6" md="5" class="px-2">
@@ -49,6 +51,7 @@
                   outlined
                   label="อีเมล"
                   v-model="EMAIL"
+                  :rules="[(v) => /.+@.+\..+/.test(v) || 'กรุณากรอกอีเมล']"
                 ></v-text-field>
               </v-col>
               <v-col cols="6" md="5" class="px-2">
@@ -56,6 +59,7 @@
                   outlined
                   label="เบอร์โทรศัพท์"
                   v-model="TEL"
+                  :rules="[(v) => !!v || 'กรุณากรอกเบอร์โทรศัพท์']"
                 ></v-text-field>
               </v-col>
               <v-col cols="12" md="5" class="px-2">
@@ -63,31 +67,29 @@
                   outlined
                   label="ชื่อสถานที่ทำงาน / สถานศึกษา*"
                   v-model="SCHOOL"
+                  :rules="[(v) => !!v || 'กรุณากรอกสถานที่ทำงานหรือสถานศึกษา']"
                 ></v-text-field>
               </v-col>
               <v-col cols="12" class="px-2">
                 <p class="title">
                   กรุณาแนบไฟล์ (upload file) สำเนาบัตรประชาชน
-                  ที่มีลายเซ็นรับรองสำเนาถูกต้อง โดยใช้สามารถใช้ไฟล์ pdf
+                  ที่มีลายเซ็นรับรองสำเนาถูกต้องใช้ไฟล์ pdf เท่านั้น
                 </p>
                 <v-file-input
                   outlined
                   label="สำเนาบัตรประชาชน"
                   v-model="file"
                   @change="onFileChange"
+                  accept="application/pdf"
+                  :rules="[(v) => !!v || 'กรุณาแนบสำเนาบัตรประชาชน']"
                 ></v-file-input>
-                <v-textarea
-                  outlined
-                  label="ความคิดเห็นเพิ่มเติม"
-                  v-model="comment"
-                ></v-textarea>
               </v-col>
               <v-col cols="12" class="px-2">
                 <v-btn
                   width="100%"
                   height="45px"
                   color="primary"
-                  class="mb-4"
+                  class="mb-7"
                   @click="register"
                 >
                   บันทึกข้อมูล
@@ -102,11 +104,14 @@
 </template>
 
 <script>
+import backgroundUrl from "~/assets/pile-books-bookstore.jpg";
 import { db } from "../plugins/firebaseInit";
 import { collection, addDoc, getDocs, query, doc } from "firebase/firestore";
+
 export default {
   data() {
     return {
+      backgroundUrl,
       titleName: "",
       titleList: [
         {
@@ -201,9 +206,7 @@ export default {
           EMAIL: this.EMAIL,
           TEL: this.TEL,
           SCHOOL: this.SCHOOL,
-          SUBJECT: this.subject,
-          SUBTIME: this.subjectTime,
-          COMMENT: this.comment,
+          FILE: this.file,
         });
         this.$swal({
           position: "center",
@@ -223,3 +226,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#bg-image {
+  background-size: cover !important; /* ปรับขนาดรูปให้เต็มพื้นที่ */
+  background-position: center !important; /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
+  height: 100%;
+}
+</style>
