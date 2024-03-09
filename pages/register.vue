@@ -76,31 +76,6 @@
                   v-model="file"
                   @change="onFileChange"
                 ></v-file-input>
-              </v-col>
-              <v-col cols="12" class="px-2">
-                <p class="title">สมัครเรียน รายวิชาของคณะ</p>
-              </v-col>
-              <v-col cols="12" md="6" class="px-2">
-                <v-select
-                  outlined
-                  label="รายวิชาของคณะ"
-                  :items="subjectList"
-                  item-text="subject"
-                  item-value="id"
-                  v-model="subject"
-                ></v-select>
-              </v-col>
-              <v-col cols="12" md="6" class="px-2">
-                <v-select
-                  outlined
-                  label="วันและเวลาที่เปิดสอน"
-                  :items="subjectList"
-                  item-text="time"
-                  item-value="time"
-                  v-model="subjectTime"
-                ></v-select>
-              </v-col>
-              <v-col cols="12" class="px-2">
                 <v-textarea
                   outlined
                   label="ความคิดเห็นเพิ่มเติม"
