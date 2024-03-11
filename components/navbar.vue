@@ -33,7 +33,11 @@ export default {
       this.$router.push("/");
     },
     news() {
-      this.$router.push("/news");
+      const newsElement = document.getElementById("newss");
+      // this.$router.push({ path: "/", hash: "#newss" });
+      if (newsElement) {
+        newsElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     },
     services() {
       this.$router.push("/services");

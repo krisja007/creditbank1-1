@@ -1,5 +1,12 @@
 <template>
   <div id="bg-image" :style="{ backgroundImage: `url(${backgroundUrl})` }">
+    <v-row no-gutters>
+      <v-col class="">
+        <v-btn class="headline pa-7" width="100%" elevation="5" @click="goHome">
+          <v-icon large>mdi mdi-home</v-icon>กลับสู่หน้าหลัก
+        </v-btn>
+      </v-col>
+    </v-row>
     <v-container class="d-flex justify-center">
       <v-card max-width="800px" class="mt-10" elevation="8">
         <v-card-title class="ml-2 justify-center display-1"
@@ -84,7 +91,7 @@
                   label="ระดับการศึกษา"
                   :items="levelClass"
                   item-text="name"
-                  item-value="id"
+                  item-value="name"
                   v-model="levelC"
                   :rules="[(v) => !!v || 'กรุณาเลือกระดับการศึกษา']"
                 ></v-select>
@@ -406,6 +413,7 @@ export default {
           TEL: this.TEL,
           SCHOOL: this.SCHOOL,
           FILE: downloadURL,
+          ROLE: "user",
         });
         this.$swal({
           position: "center",
@@ -418,10 +426,9 @@ export default {
         this.$router.replace({ path: "/login" });
       }
     },
-
-    async listarry() {
-      const q = query(collection(db, "users"));
-      const querySnapshot = await getDocs(q);
+    goHome() {
+      this.$router.push("/");
+      this.citizenID = "";
     },
   },
 };
