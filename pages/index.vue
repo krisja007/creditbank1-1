@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-index">
+  <div id="bg-index">
     <v-container>
       <v-img :aspect-ratio="16 / 9" :src="require('~/assets/education.png')">
        <v-img
@@ -28,18 +28,32 @@
       </v-img>
     </v-container>
     <v-container>
-      <h1 class="ml-5">รายวิชาที่กำลังเปิดให้ลงทะเบียน</h1>
-      <v-carousel v-model="model">
-        <v-carousel-item v-for="(color, i) in colors" :key="color">
-          <v-sheet :color="color" height="100%" tile>
-            <v-row class="fill-height" align="center" justify="center">
-              <div class="text">
-                รายวิชาที่กำลังเปิดให้ลงทะเบียน {{ i + 1 }}
-              </div>
-            </v-row>
-          </v-sheet>
-        </v-carousel-item>
-      </v-carousel>
+      <v-row>
+        <v-col cols="12" class="display-1 font-weight-black">
+          รายวิชาที่กำลังเปิดให้ลงทะเบียน
+        </v-col>
+        <v-col cols="12" class="d-flex justify-center">
+          <v-carousel v-model="model" style="width: 100%; height: 550px">
+            <v-carousel-item
+              v-for="(item, i) in colors"
+              :key="i"
+              :src="item.src"
+              reverse-transition="fade-transition"
+            >
+              <img :src="item.src" style="width: 100%; height: 100%" />
+            </v-carousel-item>
+          </v-carousel>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container>
+      <v-row>
+        <v-col cols="12" class="display-1 font-weight-black" id="newss">
+          ข่าวประชาสัมพันธ์
+        </v-col>
+
+        <v-col cols="12"></v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
@@ -48,7 +62,14 @@
 export default {
   data: () => ({
     model: 0,
-    colors: ["primary", "secondary", "yellow darken-2", "red", "orange"],
+    colors: [
+      {
+        src: require("~/assets/423619428_1273427543573910_6746996740425044430_n.png"),
+      },
+      {
+        src: require("~/assets/423619568_1415588712416905_4794891260263850231_n.png"),
+      },
+    ],
   }),
     methods: {
     subject() {
@@ -57,4 +78,5 @@ export default {
 },
 };
 </script>
-<style scoped></style>
+<style scoped>
+</style>

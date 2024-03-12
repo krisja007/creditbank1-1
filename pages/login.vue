@@ -20,28 +20,26 @@
             <v-img
               max-height="100"
               max-width="100"
-              class="text-center"
+              class="text-center mb-5"
               :src="require('~/assets/mju_logo.png')"
             >
             </v-img>
           </div>
-          <p class="title">เลขบัตรประจำตัวประชาชน 13 หลัก (Passport Number)</p>
           <v-text-field
             class="mt-1"
             outlined
-            label="กรุณากรอกเลขบัตรประชาชน"
-            placeholder=""
-            v-model="citizenID"
+            label="ชื่อผู้ใช้"
+            v-model="USERNAME"
             maxlength="13"
           ></v-text-field>
 
           <v-text-field
             class="mt-4"
             outlined
-            label="กรุณากรอกรหัสผ่าน A - Z"
+            label="รหัสผ่าน"
             placeholder=""
             :rules="passwordRules"
-            v-model="passwordID"
+            v-model="PASSWORD"
           ></v-text-field>
         </v-card-text>
         <v-card-actions class="">
@@ -67,6 +65,16 @@
 </template>
 
 <script>
+import { db } from "../plugins/firebaseInit";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  doc,
+  where,
+} from "firebase/firestore";
+import { mapMutations } from "vuex";
 export default {
   name: "login",
   data() {
@@ -80,36 +88,74 @@ export default {
       ],
       citizenID: "",
       checkCitizenId: "",
-      passwordID: "",
+      PASSWORD: null,
       checkpassId: "",
+      USERNAME: null,
     };
   },
-  watch: {
-    citizenID(newVal) {
-      if (newVal.length === 13) {
-        this.citizenID =
-          newVal.slice(0, 3) +
-          "-" +
-          newVal.slice(3, 6) +
-          "-" +
-          newVal.slice(6, 10) +
-          "-" +
-          newVal.slice(10, 12) +
-          "-" +
-          newVal.slice(12);
-      }
-    },
-  },
+  // watch: {
+  //   citizenID(newVal) {
+  //     if (newVal.length === 13) {
+  //       this.citizenID =
+  //         newVal.slice(0, 3) +
+  //         "-" +
+  //         newVal.slice(3, 6) +
+  //         "-" +
+  //         newVal.slice(6, 10) +
+  //         "-" +
+  //         newVal.slice(10, 12) +
+  //         "-" +
+  //         newVal.slice(12);
+  //     }
+  //   },
+  // },
   methods: {
+    ...mapMutations({
+      SET_USER: "users/SET_USER",
+    }),
     goHome() {
       this.$router.push("/");
       this.citizenID = "";
     },
-    checkUser() {
-      this.checkCitizenId = this.citizenID.replace(/-/g, "");
+    async checkUser() {
+      try {
+        const querySnapshot = query(
+          collection(db, "users"),
+          where("USERNAME", "==", this.USERNAME),
+          where("PASSWORD", "==", this.PASSWORD)
+        );
+        const dataUser = await getDocs(querySnapshot);
+
+        dataUser.forEach((doc) => {
+          this.SET_USER(doc.data());
+        });
+
+        if (!dataUser.empty) {
+          console.log("พบข้อมูลผู้ใช้");
+          this.$swal({
+            position: "center",
+            icon: "success",
+            title: "เข้าสู่ระบบสำเร็จ",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          this.$router.push({ path: "/users/userpage" });
+        } else {
+          this.$swal({
+            icon: "warning",
+            title: "ไม่พบข้อมูลผู้ใช้",
+            text: "กรุณากรอกข้อมูลให้ถูกต้อง",
+          });
+          this.USERNAME = null;
+          this.PASSWORD = null;
+        }
+      } catch (error) {
+        console.error("เกิดข้อผิดพลาดในการตรวจสอบผู้ใช้:", error);
+      }
     },
+
     goRegister() {
-      this.$router.push('/register')
+      this.$router.push("/register");
     },
   },
 };
