@@ -2,9 +2,16 @@
   <div class="bg-index">
     <v-container>
       <v-img :aspect-ratio="16 / 9" :src="require('~/assets/education.png')">
-        <h1 class="ml-10 mt-15">หลักสูตรการศึกษาตลอดชีวิต</h1>
+       <v-img
+              max-height="100"
+              max-width="100"
+              class="ml-10 mt-10"
+              :src="require('~/assets/mju_logo.png')"
+            >
+            </v-img>
+        <h1 class="ml-10 mt-5">หลักสูตรการศึกษาตลอดชีวิต</h1>
         <v-btn class="ml-10 mt-3" depressed color="success"
-          >เลือกหลักสูตร</v-btn
+           @click="subject">เลือกหลักสูตร</v-btn
         >
         <h4 class="ml-10 mt-10">คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</h4>
         <h4 class="ml-10 mt-0">มหาวิทยาลัยแม่โจ้</h4>
@@ -43,6 +50,11 @@ export default {
     model: 0,
     colors: ["primary", "secondary", "yellow darken-2", "red", "orange"],
   }),
+    methods: {
+    subject() {
+      this.$router.push("/subject");
+    },
+},
 };
 </script>
 <style scoped></style>
