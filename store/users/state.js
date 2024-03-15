@@ -1,4 +1,5 @@
 export default () => ({
   loader: false,
-  user: null
+  user: null,
+  login: false,
 });

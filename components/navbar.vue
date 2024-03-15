@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <v-app-bar color="1E1E1E" dark>
+  <div class="" v-if="!GET_LOGIN">
+    <v-app-bar color="1E1E1E" dark >
       <v-toolbar-title>
         <v-img
           max-height="80"
@@ -11,11 +11,13 @@
         </v-img>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <button class="mr-10" @click="homepage">หน้าหลัก</button>
-      <button class="mr-10" @click="news">ข่าวประชาสัมพันธ์</button>
-      <button class="mr-10" @click="services">ระเบียบ ประกาศ ขอบังคับ</button>
-      <button class="mr-10" @click="about">เกี่ยวกับเรา</button>
-      <v-btn depressed color="success" @click="login"
+      <div class="" v-if="!GET_LOGIN">
+        <button class="mr-10" @click="homepage">หน้าหลัก</button>
+        <button class="mr-10" @click="news">ข่าวประชาสัมพันธ์</button>
+        <button class="mr-10" @click="services">ระเบียบ ประกาศ ขอบังคับ</button>
+        <button class="mr-10" @click="about">เกี่ยวกับเรา</button>
+      </div>
+      <v-btn depressed color="success" @click="login" v-if="!GET_LOGIN"
         >เข้าสู่ระบบ | Log in</v-btn
       >
     </v-app-bar>
@@ -23,10 +25,16 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "navbar",
   data() {
     return {};
+  },
+  computed: {
+    ...mapGetters({
+      GET_LOGIN: "users/GET_LOGIN",
+    }),
   },
   methods: {
     homepage() {

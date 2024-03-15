@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default {
   data: () => ({
     model: 0,
@@ -64,6 +65,14 @@ export default {
       },
     ],
   }),
+  created() {
+    this.SET_LOGIN(false)
+  },
+  methods: {
+    ...mapMutations({
+      SET_LOGIN: 'users/SET_LOGIN'
+    })
+  },
   mounted() {},
 };
 </script>
