@@ -5,4 +5,7 @@ export default {
   SET_USER(state, payload) {
     state.user = payload;
   },
+  SET_LOGIN(state, payload) {
+    state.login = payload;
+  },
 };

@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default {
   data: () => ({
     model: 0,
@@ -71,11 +72,15 @@ export default {
       },
     ],
   }),
-    methods: {
-    subject() {
-      this.$router.push("/subject");
-    },
-},
+  created() {
+    this.SET_LOGIN(false)
+  },
+  methods: {
+    ...mapMutations({
+      SET_LOGIN: 'users/SET_LOGIN'
+    })
+  },
+  mounted() {},
 };
 </script>
 <style scoped>
