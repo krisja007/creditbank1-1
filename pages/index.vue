@@ -2,16 +2,16 @@
   <div id="bg-index">
     <v-container>
       <v-img :aspect-ratio="16 / 9" :src="require('~/assets/education.png')">
-       <v-img
-              max-height="100"
-              max-width="100"
-              class="ml-10 mt-10"
-              :src="require('~/assets/mju_logo.png')"
-            >
-            </v-img>
+        <v-img
+          max-height="100"
+          max-width="100"
+          class="ml-10 mt-10"
+          :src="require('~/assets/mju_logo.png')"
+        >
+        </v-img>
         <h1 class="ml-10 mt-5">หลักสูตรการศึกษาตลอดชีวิต</h1>
         <v-btn class="ml-10 mt-3" depressed color="success"
-           @click="subject">เลือกหลักสูตร</v-btn
+          @click="subject">เลือกหลักสูตร</v-btn
         >
         <h4 class="ml-10 mt-10">คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</h4>
         <h4 class="ml-10 mt-0">มหาวิทยาลัยแม่โจ้</h4>
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import {mapMutations} from 'vuex'
+import { mapMutations } from "vuex";
 export default {
   data: () => ({
     model: 0,
@@ -73,12 +73,15 @@ export default {
     ],
   }),
   created() {
-    this.SET_LOGIN(false)
+    this.SET_LOGIN(false);
   },
   methods: {
     ...mapMutations({
-      SET_LOGIN: 'users/SET_LOGIN'
-    })
+      SET_LOGIN: "users/SET_LOGIN",
+    }),
+    subject() {
+      this.$router.push({path: '/subject'})
+    }
   },
   mounted() {},
 };
