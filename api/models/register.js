@@ -21,7 +21,7 @@ class Register {
     FILE,
     ROLE
   ) {
-    const query = `INSERT INTO USERS (TILE, .....) VALUES ('${TITLE}', ${FIRSTNAME})`;   
+    const query = `INSERT INTO USERS () VALUES ()`;   
     return sqlcmd(query);
   }
 }
