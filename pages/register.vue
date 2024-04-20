@@ -193,7 +193,7 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations, mapActions } from "vuex";
 import backgroundUrl from "~/assets/pile-books-bookstore.jpg";
 import { db } from "../plugins/firebaseInit";
 import { collection, addDoc, getDocs, query, doc } from "firebase/firestore";
@@ -326,6 +326,9 @@ export default {
     ...mapMutations({
       LOADER: "users/SET_LOADER",
     }),
+    ...mapActions({
+      register: "users/register",
+    }),
     confirmPasswordRule(value) {
       if (value !== this.PASSWORD) {
         return "รหัสผ่านไม่ตรงกัน";
@@ -394,12 +397,7 @@ export default {
       } else {
         const downloadURL = await getDownloadURL(this.storageRefG);
 
-        const usersCollectionRef = collection(db, "users");
-        const querySnapshot = await getDocs(usersCollectionRef);
-        const count = querySnapshot.size;
-        const newID = count + 1;
-        const docRef = await addDoc(collection(db, "users"), {
-          ID: newID,
+        await this.register({
           TITLE: this.titleName,
           FIRSTNAME: this.FIRSTNAME,
           LASTNAME: this.LASTNAME,
