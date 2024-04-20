@@ -195,9 +195,9 @@
 <script>
 import { mapMutations, mapActions } from "vuex";
 import backgroundUrl from "~/assets/pile-books-bookstore.jpg";
-import { db } from "../plugins/firebaseInit";
-import { collection, addDoc, getDocs, query, doc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+//import { db } from "../plugins/firebaseInit";
+//import { collection, addDoc, getDocs, query, doc } from "firebase/firestore";
+//import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Tesseract from "tesseract.js";
 
 export default {
@@ -361,14 +361,14 @@ export default {
         isFirstNameMatch.length === isLastNameMatch.length
       ) {
         // แสดงข้อความ "สามารถใช้รูปภาพนี้ได้"
-        const storage = getStorage();
+        //const storage = getStorage();
         const file = this.file; // อ้างอิงไฟล์จาก input
         const fileName = `${file.name}`; // ตั้งชื่อไฟล์ใหม่
-        const storageRef = ref(storage, `images/${fileName}`); // ระบุตำแหน่งเก็บใน Firebase Storage
-        this.storageRefG = storageRef;
-        uploadBytes(this.storageRefG, file).then((snapshot) => {
-          console.log("Uploaded a blob or file!");
-        });
+        //const storageRef = ref(storage, `images/${fileName}`); // ระบุตำแหน่งเก็บใน Firebase Storage
+       // this.storageRefG = storageRef;
+       // uploadBytes(this.storageRefG, file).then((snapshot) => {
+        //  console.log("Uploaded a blob or file!");
+        //});
         this.$swal({
           position: "center",
           icon: "success",
@@ -395,8 +395,6 @@ export default {
           title: "กรุณากรอกข้อมูลให้ครบถ้วน",
         });
       } else {
-        const downloadURL = await getDownloadURL(this.storageRefG);
-
         await this.register({
           TITLE: this.titleName,
           FIRSTNAME: this.FIRSTNAME,
@@ -410,7 +408,7 @@ export default {
           PASSWORD: this.PASSWORD,
           TEL: this.TEL,
           SCHOOL: this.SCHOOL,
-          FILE: downloadURL,
+          FILE: this.file,
           ROLE: "user",
         });
         this.$swal({
