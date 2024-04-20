@@ -3,9 +3,9 @@ export default {
   //     return localStorage.getItem("token");
   //   },
 
-  register({ commit }, data) {
+  registerData({ commit }, data) {
     return this.$axios
-      .$post("api/reg/register", data)
+      .$post("api/reg/registerData", data)
       .then((response) => {
         return Promise.resolve(response);
       })

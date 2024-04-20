@@ -327,7 +327,7 @@ export default {
       LOADER: "users/SET_LOADER",
     }),
     ...mapActions({
-      register: "users/register",
+      registerData: "users/registerData",
     }),
     confirmPasswordRule(value) {
       if (value !== this.PASSWORD) {
@@ -365,8 +365,8 @@ export default {
         const file = this.file; // อ้างอิงไฟล์จาก input
         const fileName = `${file.name}`; // ตั้งชื่อไฟล์ใหม่
         //const storageRef = ref(storage, `images/${fileName}`); // ระบุตำแหน่งเก็บใน Firebase Storage
-       // this.storageRefG = storageRef;
-       // uploadBytes(this.storageRefG, file).then((snapshot) => {
+        // this.storageRefG = storageRef;
+        // uploadBytes(this.storageRefG, file).then((snapshot) => {
         //  console.log("Uploaded a blob or file!");
         //});
         this.$swal({
@@ -395,7 +395,7 @@ export default {
           title: "กรุณากรอกข้อมูลให้ครบถ้วน",
         });
       } else {
-        await this.register({
+        await this.registerData({
           TITLE: this.titleName,
           FIRSTNAME: this.FIRSTNAME,
           LASTNAME: this.LASTNAME,
@@ -408,7 +408,7 @@ export default {
           PASSWORD: this.PASSWORD,
           TEL: this.TEL,
           SCHOOL: this.SCHOOL,
-          FILE: this.file,
+          // FILE: this.file,
           ROLE: "user",
         });
         this.$swal({
@@ -419,7 +419,7 @@ export default {
           timer: 1500,
         });
         this.LOADER(false);
-        this.$router.replace({ path: "/login" });
+        // this.$router.replace({ path: "/login" });
       }
     },
     goHome() {
