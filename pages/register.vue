@@ -112,7 +112,7 @@
                   :rules="[(v) => !!v || 'กรุณากรอกเบอร์โทรศัพท์']"
                 ></v-text-field>
               </v-col>
-              <v-col cols="12" md="5" class="px-2">
+              <v-col cols="12" md="12" class="px-2">
                 <v-text-field
                   outlined
                   label="ชื่อสถานที่ทำงาน / สถานศึกษา*"

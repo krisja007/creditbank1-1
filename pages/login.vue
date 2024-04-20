@@ -117,7 +117,7 @@ export default {
     goHome() {
       this.$router.push("/");
       this.citizenID = "";
-    },
+    }, 
     async checkUser() {
       try {
         const querySnapshot = query(

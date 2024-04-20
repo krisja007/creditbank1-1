@@ -11,7 +11,7 @@
             </v-img>
         <h1 class="ml-10 mt-5">หลักสูตรการศึกษาตลอดชีวิต</h1>
         <v-btn class="ml-10 mt-3" depressed color="success"
-           @click="subject">เลือกหลักสูตร</v-btn
+           @click="goSubject">เลือกหลักสูตร</v-btn
         >
         <h4 class="ml-10 mt-10">คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</h4>
         <h4 class="ml-10 mt-0">มหาวิทยาลัยแม่โจ้</h4>
@@ -30,7 +30,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" class="display-1 font-weight-black">
-          รายวิชาที่กำลังเปิดให้ลงทะเบียน
+           ข่าวประชาสัมพันธ์
         </v-col>
         <v-col cols="12" class="d-flex justify-center">
           <v-carousel v-model="model" style="width: 100%; height: 550px">
@@ -49,7 +49,6 @@
     <v-container>
       <v-row>
         <v-col cols="12" class="display-1 font-weight-black" id="newss">
-          ข่าวประชาสัมพันธ์
         </v-col>
 
         <v-col cols="12"></v-col>
@@ -78,7 +77,10 @@ export default {
   methods: {
     ...mapMutations({
       SET_LOGIN: 'users/SET_LOGIN'
-    })
+    }),
+    goSubject(){
+      this.$router.push("/subject");
+    }
   },
   mounted() {},
 };

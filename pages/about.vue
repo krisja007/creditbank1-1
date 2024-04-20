@@ -8,34 +8,46 @@
       </v-col></v-img
     >
     <v-container>
-      <v-img
-        max-height="700"
-              max-width="1800"
-              class="text-center"
-              :src="require('~/assets/student-class-looking-course.png')"
-      >
-      </v-img>
+      <v-row no-gutters>
+        <v-col cols="6" class="picturebg1">
+          <v-img
+            :src="require('~/assets/picture1.png')"
+            width="100%"
+            class="ml-5 picturebg1"
+          >   
+          </v-img>
+        </v-col>
+        <v-col cols="6">
+          <v-img
+            :src="require('~/assets/picture2.png')"
+            width="100%"
+            class="mr-5"
+          ></v-img>
+        </v-col>
+        <v-col cols="6"></v-col>
+      </v-row>
     </v-container>
     <v-container>
-<v-card depressed color="grey lighten-2">
-      <h1 class="ml-6">หลักสูตรสะสมหน่วยกิต(Credit Bank)</h1>
-      <h2 class="ml-6">
-        การสะสมหน่วยการเรียนรู้ ( Credit Bank) หรือ ธนาคารหน่วยกิต
-        เป็นการเปิดโอกาสให้ผู้เรียนและประชาชนได้เรียนและทำงานไปในเวลาเดียวกันโดยสามารถนําผลการเรียนรู้ หรือการฝึกอบรมเปิดสอนอยู่ทั้งในระดับปริญญาตรีและบัณฑิตศึกษาเป็นการตอบโจทย์นักเรียนและบุคคลทั่วไปที่มีแผนจะเข้ามาศึกษาต่อที่สถาบันฯ
-        หรือผู้ที่สนใจเพิ่มพูนความรู้และพัฒนาทักษะตลอด
-        นักศึกษาจนการเรียนรู้ตลอดชีพ
-      </h2>
-</v-card>
+      <v-card depressed color="grey lighten-2">
+        <h1 class="ml-6">หลักสูตรสะสมหน่วยกิต(Credit Bank)</h1>
+        <h2 class="ml-6">
+          การสะสมหน่วยการเรียนรู้ ( Credit Bank) หรือ ธนาคารหน่วยกิต
+          เป็นการเปิดโอกาสให้ผู้เรียนและประชาชนได้เรียนและทำงานไปในเวลาเดียวกันโดยสามารถนําผลการเรียนรู้
+          หรือการฝึกอบรมเปิดสอนอยู่ทั้งในระดับปริญญาตรีและบัณฑิตศึกษาเป็นการตอบโจทย์นักเรียนและบุคคลทั่วไปที่มีแผนจะเข้ามาศึกษาต่อที่สถาบันฯ
+          หรือผู้ที่สนใจเพิ่มพูนความรู้และพัฒนาทักษะตลอด
+          นักศึกษาจนการเรียนรู้ตลอดชีพ
+        </h2>
+      </v-card>
     </v-container>
-    
-      <v-card depressed color="grey darken-4 text-white">
-        <v-img
-          max-height="80"
-          max-width="300"
-          class="ml-7"
-          :src="require('~/assets/mju_logo_FOOTER.png')"
-        >
-        </v-img>
+
+    <v-card depressed color="grey darken-4 text-white">
+      <v-img
+        max-height="80"
+        max-width="300"
+        class="ml-7"
+        :src="require('~/assets/mju_logo_FOOTER.png')"
+      >
+      </v-img>
       <h2 class="ml-10 mt-10">คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</h2>
       <h2 class="ml-10 mt-0">มหาวิทยาลัยแม่โจ้</h2>
       <h2 class="ml-10 mt-2">
@@ -48,8 +60,7 @@
       <h2 class="ml-10 mt-2">
         <v-icon large color="black">mdi-email</v-icon>science@mju.ac.th
       </h2>
-      </v-card>
-   
+    </v-card>
   </div>
 </template>
 
@@ -57,7 +68,14 @@
 export default {};
 </script>
 <style scoped>
-.text-white{
-  color: white !important; 
+.text-white {
+  color: white !important;
+}
+.picturebg1 {
+  position: relative !important;
+  z-index: 10;
+}
+.text-box {
+  position: absolute !important;
 }
 </style>

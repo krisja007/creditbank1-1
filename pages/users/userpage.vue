@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    Kuy first
+    Hello World
   </div>
 </template>
 

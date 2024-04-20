@@ -11,7 +11,9 @@
   "dependencies": {
     "core-js": "^3.25.3",
     "firebase": "^10.8.1",
+    "fpdi": "^1.4.0",
     "nuxt": "^2.15.8",
+    "pdfmake": "^0.2.10",
     "tesseract.js": "^5.0.5",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
