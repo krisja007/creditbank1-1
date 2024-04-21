@@ -6,22 +6,22 @@ class Register {
   }
 
   static register(
-    TITLE,
-    FIRSTNAME,
-    LASTNAME,
-    TITLEENG,
-    FIRSTNAMEENG,
-    LASTNAMEENG,
-    LEVELC,
-    EMAIL,
-    USERNAME,
-    PASSWORD,
-    TEL,
-    SCHOOL,
-    FILE,
-    ROLE
+    Name,
+    Nameeeng,
+    Lastname,
+    Lastnameeng,
+    Username,
+    Password,
+    IDCard,
+    School,
+    Levelc,
+    Tel,
+    Title,
+    Titleeng,
+    Email,
+    Role,
   ) {
-    const query = `INSERT INTO USERS () VALUES ()`;   
+    const query = `INSERT INTO USERS ( Name,Nameeeng,Lastname,Lastnameeng,Username,Password,IDCard,Subject,School,Levelc,Tel,Title,Titleeng,Email,ROLE,) VALUES ("${Name}","${Nameeeng}","${Lastname}","${Lastnameeng}","${Username}","${Password}""${IDCard}","${Lastname}","${Subject}","${School}","${Levelc}","${Tel}","${Title}","${Titleeng}","${Email}","${Role}",)`;
     return sqlcmd(query);
   }
 }

@@ -2,59 +2,45 @@ const Register = require("../models/register");
 
 const handleRegister = async (req, res) => {
   const {
-    TITLE,
-    FIRSTNAME,
-    LASTNAME,
-    TITLEENG,
-    FIRSTNAMEENG,
-    LASTNAMEENG,
-    LEVELC,
-    EMAIL,
-    USERNAME,
-    PASSWORD,
-    TEL,
-    SCHOOL,
-    FILE,
-    ROLE,
+    Name,
+    Nameeeng,
+    Lastname,
+    Lastnameeng,
+    Username,
+    Password,
+    IDCard,
+    Subject,
+    School,
+    Levelc,
+    Tel,
+    Title,
+    Titleeng,
+    Email,
+    Role,
   } = req.body;
 
-  console.log(
-    TITLE,
-    FIRSTNAME,
-    LASTNAME,
-    TITLEENG,
-    FIRSTNAMEENG,
-    LASTNAMEENG,
-    LEVELC,
-    EMAIL,
-    USERNAME,
-    PASSWORD,
-    TEL,
-    SCHOOL,
-    FILE,
-    ROLE
-  );
-  // try {
-  //   const result = await Register.register(
-  //     TITLE,
-  //     FIRSTNAME,
-  //     LASTNAME,
-  //     TITLEENG,
-  //     FIRSTNAMEENG,
-  //     LASTNAMEENG,
-  //     LEVELC,
-  //     EMAIL,
-  //     USERNAME,
-  //     PASSWORD,
-  //     TEL,
-  //     SCHOOL,
-  //     FILE,
-  //     ROLE
-  //   );
-  //   res.status(200).send(result);
-  // } catch (error) {
-  //   res.status(500).error({ message: error });
-  // }
+  try {
+    const result = await Register.register(
+      Name,
+      Nameeeng,
+      Lastname,
+      Lastnameeng,
+      Username,
+      Password,
+      IDCard,
+      Subject,
+      School,
+      Levelc,
+      Tel,
+      Title,
+      Titleeng,
+      Email,
+      Role,
+    );
+    res.status(200).send(result);
+  } catch (error) {
+    res.status(500).send({ message: error });
+  }
 };
 
 module.exports = {

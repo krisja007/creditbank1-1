@@ -172,6 +172,15 @@
                   {{ this.textDD }}
                 </div>
               </v-col>
+                <v-col cols="6" md="5" class="px-2">
+                <v-text-field
+                  outlined
+                  label="เลขบัตรประจำตัวประชาชน"
+                  v-model="IDCard"
+                  :max="13"
+                  :rules="[(v) => !!v || 'กรุณากรอกเลขบัตรประจำตัวประชาชน']"
+                ></v-text-field>
+              </v-col>
               <v-col cols="12" class="px-2">
                 <v-btn
                   width="100%"
