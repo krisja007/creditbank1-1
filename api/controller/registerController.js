@@ -1,4 +1,5 @@
 const Register = require("../models/register");
+const bcrypt = require('bcrypt');
 
 const handleRegister = async (req, res) => {
   const {
@@ -20,13 +21,14 @@ const handleRegister = async (req, res) => {
   } = req.body;
 
   try {
+    const hashpass = await bcrypt.hash(Password,10)
     const result = await Register.register(
       Name,
       Nameeeng,
       Lastname,
       Lastnameeng,
       Username,
-      Password,
+      hashpass,
       IDCard,
       Subject,
       School,
