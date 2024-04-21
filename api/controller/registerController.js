@@ -1,16 +1,15 @@
 const Register = require("../models/register");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
 const handleRegister = async (req, res) => {
   const {
     Name,
-    Nameeeng,
+    Nameeng,
     Lastname,
     Lastnameeng,
     Username,
-    Password,
+    password,
     IDCard,
-    Subject,
     School,
     Levelc,
     Tel,
@@ -20,28 +19,28 @@ const handleRegister = async (req, res) => {
     Role,
   } = req.body;
 
+
   try {
-    const hashpass = await bcrypt.hash(Password,10)
+    const hashPass = await bcrypt.hash(password, 8);
     const result = await Register.register(
       Name,
-      Nameeeng,
+      Nameeng,
       Lastname,
       Lastnameeng,
       Username,
-      hashpass,
+      hashPass,
       IDCard,
-      Subject,
       School,
       Levelc,
       Tel,
       Title,
       Titleeng,
       Email,
-      Role,
+      Role
     );
     res.status(200).send(result);
   } catch (error) {
-    res.status(500).send({ message: error });
+    res.status(500).json({ message: error.message });
   }
 };
 

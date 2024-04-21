@@ -172,7 +172,7 @@
                   {{ this.textDD }}
                 </div>
               </v-col>
-                <v-col cols="6" md="5" class="px-2">
+              <v-col cols="6" md="5" class="px-2">
                 <v-text-field
                   outlined
                   label="เลขบัตรประจำตัวประชาชน"
@@ -306,6 +306,7 @@ export default {
       listData: [],
       listarray: [],
       isIdCard: false,
+      IDCard: null,
       textDD: "",
       storageRefG: null,
     };
@@ -404,29 +405,36 @@ export default {
           title: "กรุณากรอกข้อมูลให้ครบถ้วน",
         });
       } else {
-        await this.registerData({
-          TITLE: this.titleName,
-          FIRSTNAME: this.FIRSTNAME,
-          LASTNAME: this.LASTNAME,
-          TITLEENG: this.titleNameEng,
-          FIRSTNAMEENG: this.FIRSTNAMEENG,
-          LASTNAMEENG: this.LASTNAMEENG,
-          LEVELC: this.levelC,
-          EMAIL: this.EMAIL,
-          USERNAME: this.USERNAME,
-          PASSWORD: this.PASSWORD,
-          TEL: this.TEL,
-          SCHOOL: this.SCHOOL,
+        this.registerData({
+          Title: this.titleName,
+          Name: this.FIRSTNAME,
+          Lastname: this.LASTNAME,
+          Titleeng: this.titleNameEng,
+          Nameeng: this.FIRSTNAMEENG,
+          Lastnameeng: this.LASTNAMEENG,
+          Levelc: this.levelC,
+          IDCard: this.IDCard,
+          Username: this.USERNAME,
+          password: this.PASSWORD,
+          Tel: this.TEL,
+          School: this.SCHOOL,
           // FILE: this.file,
-          ROLE: "user",
-        });
-        this.$swal({
-          position: "center",
-          icon: "success",
-          title: "ลงทะเบียนสำเร็จ",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+          Role: "user",
+          Email: this.EMAIL,
+        })
+          .then(() => {
+            this.$swal({
+              position: "center",
+              icon: "success",
+              title: "ลงทะเบียนสำเร็จ",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+
         this.LOADER(false);
         // this.$router.replace({ path: "/login" });
       }

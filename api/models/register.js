@@ -7,11 +7,11 @@ class Register {
 
   static register(
     Name,
-    Nameeeng,
+    Nameeng,
     Lastname,
     Lastnameeng,
     Username,
-    Password,
+    hashPass,
     IDCard,
     School,
     Levelc,
@@ -19,9 +19,10 @@ class Register {
     Title,
     Titleeng,
     Email,
-    Role,
+    Role
   ) {
-    const query = `INSERT INTO USERS ( Name,Nameeeng,Lastname,Lastnameeng,Username,Password,IDCard,Subject,School,Levelc,Tel,Title,Titleeng,Email,ROLE,) VALUES ("${Name}","${Nameeeng}","${Lastname}","${Lastnameeng}","${Username}","${Password}""${IDCard}","${Lastname}","${Subject}","${School}","${Levelc}","${Tel}","${Title}","${Titleeng}","${Email}","${Role}",)`;
+    const query = `INSERT INTO USER (Name,Nameeng,Lastname,Lastnameeng,Username,Password,IDCard,School,Levelc,Tel,Title,Titleeng,Role, Email) VALUES ("${Name}","${Nameeng}","${Lastname}","${Lastnameeng}","${Username}","${hashPass}","${IDCard}","${School}","${Levelc}","${Tel}","${Title}","${Titleeng}","${Role}", "${Email}")`;
+    console.log(query);
     return sqlcmd(query);
   }
 }
