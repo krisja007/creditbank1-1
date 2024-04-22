@@ -21,7 +21,7 @@ class Register {
     Email,
     Role,
   ) {
-    const query = `INSERT INTO USERS ( Name,Nameeeng,Lastname,Lastnameeng,Username,Password,IDCard,Subject,School,Levelc,Tel,Title,Titleeng,Email,ROLE,) VALUES ("${Name}","${Nameeeng}","${Lastname}","${Lastnameeng}","${Username}","${Password}""${IDCard}","${Lastname}","${Subject}","${School}","${Levelc}","${Tel}","${Title}","${Titleeng}","${Email}","${Role}",)`;
+    const query = `INSERT INTO USERS ( Name,Nameeeng,Lastname,Lastnameeng,Username,Password,IDCard,School,Levelc,Tel,Title,Titleeng,Email,Role,) VALUES ("${Name}","${Nameeeng}","${Lastname}","${Lastnameeng}","${Username}","${Password}""${IDCard}","${School}","${Levelc}","${Tel}","${Title}","${Titleeng}","${Email}","${Role}",)`;
     return sqlcmd(query);
   }
 }
