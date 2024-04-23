@@ -19,9 +19,9 @@ const handleRegister = async (req, res) => {
     Role,
   } = req.body;
 
-
   try {
     const hashPass = await bcrypt.hash(password, 8);
+    const Online = 0;
     const result = await Register.register(
       Name,
       Nameeng,
@@ -36,7 +36,8 @@ const handleRegister = async (req, res) => {
       Title,
       Titleeng,
       Email,
-      Role
+      Role,
+      Online
     );
     res.status(200).send(result);
   } catch (error) {
