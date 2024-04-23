@@ -59,28 +59,22 @@ export default {
       selectedItem: "",
       items: [
         {
-          title: "ภาพรวม",
-          icon: "mdi-view-dashboard",
-          nested: false,
-          to: "/admin/adminpage",
-        },
-        {
-          title: "การจัดการ",
+          title: "จัดการสิทธิ์การสร้างโพสต์อบรม",
           icon: "mdi-cog",
           nested: true,
           subitems: [
             {
-              title: "จัดการผู้ใช้งาน",
+              title: "แก้ไขข้อมูลของผู้ใช้",
               icon: "mdi-wrench",
               to: "/admin/manageusers",
             },
             {
-              title: "เพิ่มใบประกาศ",
+              title: "ดูจำนวนผู้ใช้งานในระบบ",
               icon: "mdi-wrench",
               to: "/admin/managecer",
             },
             {
-              title: "เพิ่มเนื้อหาของบทเรียนใหม่",
+              title: "จัดการโพสต์",
               icon: "mdi-wrench",
               to: "/admin/manageSubject",
             },

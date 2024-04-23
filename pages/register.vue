@@ -430,6 +430,7 @@ export default {
               showConfirmButton: false,
               timer: 1500,
             });
+            this.$router.replace({ path: "/login" });
           })
           .catch((e) => {
             console.log(e);
