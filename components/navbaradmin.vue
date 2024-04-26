@@ -59,10 +59,15 @@ export default {
       selectedItem: "",
       items: [
         {
-          title: "จัดการสิทธิ์การสร้างโพสต์อบรม",
+          title: "จัดการระบบ",
           icon: "mdi-cog",
           nested: true,
           subitems: [
+                {
+              title: "จัดการสิทธิ์การสร้างโพสต์อบรม",
+              icon: "mdi-wrench",
+              to: "/admin/adminapprove",
+            },
             {
               title: "แก้ไขข้อมูลของผู้ใช้",
               icon: "mdi-wrench",

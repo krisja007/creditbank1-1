@@ -3,18 +3,17 @@
     <NavbarAd />
     <v-row>
   <v-container>
-      <v-card depressed color="grey lighten-2">
-        <h1 class="ml-6">หลักสูตรสะสมหน่วยกิต(Credit Bank)</h1>
-        <h2 class="ml-6">
-          การสะสมหน่วยการเรียนรู้ ( Credit Bank) หรือ ธนาคารหน่วยกิต
-          เป็นการเปิดโอกาสให้ผู้เรียนและประชาชนได้เรียนและทำงานไปในเวลาเดียวกันโดยสามารถนําผลการเรียนรู้
-          หรือการฝึกอบรมเปิดสอนอยู่ทั้งในระดับปริญญาตรีและบัณฑิตศึกษาเป็นการตอบโจทย์นักเรียนและบุคคลทั่วไปที่มีแผนจะเข้ามาศึกษาต่อที่สถาบันฯ
-          หรือผู้ที่สนใจเพิ่มพูนความรู้และพัฒนาทักษะตลอด
-          นักศึกษาจนการเรียนรู้ตลอดชีพ
-        </h2>
+      <v-card depressed color="green lighten-2">
+        <h3 class="ml-6">จำนวนผู้ใช้ที่ออนไลน์</h3>   
+        <h3 class="ml-6">จำนวนผู้ใช้ที่สมัครใช้งานใหม่วันนี้</h3>
       </v-card>
     </v-container>
     </v-row>
+    <v-container>
+      <v-card depressed color="green lighten-2">
+     <p class="display-1 text-center">จำนวนคำร้องขอเปิดสร้างโพสต์</p>
+      </v-card>
+    </v-container>
   </div>
 </template>
 
@@ -39,5 +38,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>

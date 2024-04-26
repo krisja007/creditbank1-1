@@ -1,22 +1,30 @@
 <template>
   <div>
     <h1 class="mt-10 text-center">ข้อมูลหลักสูตร</h1>
-    <v-card depressed color="grey lighten-3">
-      <v-col cols="4" md="4" class="d-flex-justify-center">
-        <div class="container">
-        <v-select class="mt-10" outlined label="เลือกวิชา"></v-select>
-        </div>
-  <v-btn class="ml-15" depressed color="success"
-          >ข้อมูลหลักสูตร</v-btn
-        >
-        <v-btn class="mt-15" depressed color="success">ยืนยัน</v-btn>
-      </v-col>
-    </v-card>
+   <v-card depressed color="grey lighten-3" class="d-flex align-center justify-center">
+  <v-col cols="5" md="6" class="d-flex flex-grow">
+    <v-select class="mt-10" outlined label="เลือกวิชา"></v-select>
+    <v-btn class="ml-10 mt-10" depressed color="success" @click="goDetail">ข้อมูลหลักสูตร</v-btn>
+  </v-col>
+   <v-btn class="ml-10 mt-10" depressed color="success">ยืนยัน</v-btn>
+</v-card>
+
   </div>
 </template>
 
 <script>
-export default {};
+import { mapMutations } from "vuex";
+export default {
+  methods: {
+       ...mapMutations({
+      SET_LOGIN: "users/SET_LOGIN",
+    }),
+    goDetail() {
+      this.$router.push("/users/detailsubject");
+    },
+  },
+};
+
 </script>
 
 <style>

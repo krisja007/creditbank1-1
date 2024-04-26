@@ -2,6 +2,11 @@
   <div class="">
     <NavbarAd />
     <v-row>
+      <v-col class="">
+      <v-btn class="headline pa-7" width="100%" elevation="5" @click="goadminpage">
+        <v-icon large>mdi mdi-home</v-icon>กลับสู่หน้าหลักแอดมิน
+      </v-btn>
+    </v-col>
       <v-col cols="12" md="12" class="text-center">
         <p class="headline">จัดการผู้ใช้งาน</p>
       </v-col>
@@ -172,6 +177,7 @@
         </v-card>
       </v-dialog>
     </v-row>
+    
   </div>
 </template>
 
@@ -361,6 +367,10 @@ export default {
     ...mapMutations({
       SET_LOGIN: "users/SET_LOGIN",
     }),
+     goadminpage() {
+      this.$router.push("/admin/adminpage");
+      this.citizenID = "";
+    }, 
     async listUser() {
       const querySnapshot = await getDocs(collection(db, "users"));
 

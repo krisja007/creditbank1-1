@@ -1,6 +1,6 @@
 <template>
   <div class="" v-if="!GET_LOGIN">
-    <v-app-bar color="1E1E1E" dark >
+    <v-app-bar color="1E1E1E" dark>
       <v-toolbar-title>
         <v-img
           max-height="80"
@@ -60,5 +60,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
