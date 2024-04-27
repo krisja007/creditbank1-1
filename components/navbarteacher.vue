@@ -1,5 +1,5 @@
 <template>
-  <div class="" v-if="!GET_LOGIN">
+  <div class="">
     <v-app-bar color="1E1E1E" dark>
       <v-toolbar-title>
         <v-img
@@ -11,12 +11,14 @@
         </v-img>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <div class="" v-if="!GET_LOGIN">
+      <div class="">
         <button class="mr-10" @click="teacherhome">หน้าหลัก</button>
         <button class="mr-10" @click="train">เพิ่มกำหนดการอบรม</button>
-        <button class="mr-10" @click="addpeople">เพิ่มรายชื่อผู้ผ้่นเกณฑ์</button>
+        <button class="mr-10" @click="addpeople">
+          เพิ่มรายชื่อผู้ผ้่นเกณฑ์
+        </button>
       </div>
-      <v-btn depressed color="success" @click="login" v-if="!GET_LOGIN"
+      <v-btn depressed color="success" @click="login"
         >เข้าสู่ระบบ | Log in</v-btn
       >
     </v-app-bar>
