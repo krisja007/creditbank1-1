@@ -1,5 +1,6 @@
 <template>
   <div id="bg-index">
+    <Navbar />
     <v-container>
       <v-img :aspect-ratio="16 / 9" :src="require('~/assets/education.png')">
         <v-img
@@ -29,10 +30,10 @@
     </v-container>
     <v-container>
       <v-row>
-        <v-col cols="12" class="display-1 font-weight-black">
+        <!-- <v-col cols="12" class="display-1 font-weight-black">
           ข่าวประชาสัมพันธ์
-        </v-col>
-        <v-col cols="12" class="d-flex justify-center">
+        </v-col> -->
+        <!-- <v-col cols="12" class="d-flex justify-center">
           <v-carousel v-model="model" style="width: 100%; height: 550px">
             <v-carousel-item
               v-for="(item, i) in colors"
@@ -40,10 +41,10 @@
               :src="item.src"
               reverse-transition="fade-transition"
             >
-              <img :src="item.src" style="width: 100%; height: 100%" />
-            </v-carousel-item>
+              <img :src="item.src" style="width: 100%; height: 100%" /> -->
+            <!-- </v-carousel-item>
           </v-carousel>
-        </v-col>
+        </v-col> -->
       </v-row>
     </v-container>
     <v-container>
@@ -63,12 +64,12 @@ export default {
   data: () => ({
     model: 0,
     colors: [
-      {
-        src: require("~/assets/423619428_1273427543573910_6746996740425044430_n.png"),
-      },
-      {
-        src: require("~/assets/423619568_1415588712416905_4794891260263850231_n.png"),
-      },
+      // {
+      //   src: require("~/assets/423619428_1273427543573910_6746996740425044430_n.png"),
+      // },
+      // {
+      //   src: require("~/assets/423619568_1415588712416905_4794891260263850231_n.png"),
+      // },
     ],
   }),
   created() {

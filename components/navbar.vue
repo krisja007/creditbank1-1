@@ -13,8 +13,7 @@
       <v-spacer></v-spacer>
       <div class="" v-if="!GET_LOGIN">
         <button class="mr-10" @click="homepage">หน้าหลัก</button>
-        <button class="mr-10" @click="news">ข่าวประชาสัมพันธ์</button>
-        <button class="mr-10" @click="services">ระเบียบ ประกาศ ขอบังคับ</button>
+        <button class="mr-10" @click="news">การอบรม</button>
         <button class="mr-10" @click="about">เกี่ยวกับเรา</button>
       </div>
       <v-btn depressed color="success" @click="login" v-if="!GET_LOGIN"
@@ -41,14 +40,7 @@ export default {
       this.$router.push("/");
     },
     news() {
-      const newsElement = document.getElementById("newss");
-      // this.$router.push({ path: "/", hash: "#newss" });
-      if (newsElement) {
-        newsElement.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    },
-    services() {
-      this.$router.push("/services");
+      this.$router.push("/news");
     },
     about() {
       this.$router.push("/about");

@@ -1,5 +1,6 @@
 <template>
   <div id="bg-image" :style="{ backgroundImage: `url(${backgroundUrl})` }">
+    <Navbar />
     <v-row no-gutters>
       <v-col class="">
         <v-btn class="headline pa-7" width="100%" elevation="5" @click="goHome">

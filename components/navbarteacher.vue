@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     teacherhome() {
-      this.$router.push("/Teacher/teeacherhome");
+      this.$router.push("/Teacher/teacherhome");
     },
     train() {
       this.$router.push("/Teacher/train");

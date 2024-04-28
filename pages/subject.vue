@@ -1,5 +1,6 @@
 <template>
   <div>
+     <Navbar />
     <h1 class="my-10 text-center">ข้อมูลหลักสูตร</h1>
     <v-card
       depressed
@@ -13,9 +14,15 @@
               class="mt-10 px-2"
               outlined
               label="เลือกวิชา"
+              v-model="detail"
+              :items="items"
+              item-text="name"
+              item-value="name"
+              
             ></v-select>
           </div>
         </v-col>
+
         <v-col cols="4" md="4" lg="4" class="d-flex justify-start align-center pl-5 pt-2">
           <v-btn class="" depressed color="success" @click="goDetail"
             >หลักสูตร</v-btn
@@ -26,12 +33,95 @@
         </v-col>
       </v-row>
     </v-card>
+     <v-card
+          color="#2AF162"
+          width="auto"
+          class="mx-10 mt-10"
+          rounded="xl"
+          v-for="(item, index) in postData"
+          :key="index"
+        >
+          <v-row class="py-5">
+            <v-col cols="5" class="my-auto">
+              <v-card class="mx-3" rounded="lg">
+                <v-img :src="item.pic" width="auto" />
+              </v-card>
+            </v-col>
+            <v-col cols="7">
+              <v-row>
+                <v-col cols="12">
+                  <p class="title tX-color">ชื่อ: {{ item.name }}</p></v-col
+                >
+                <v-col cols="12"
+                  ><p class="title tX-color">วันที่: {{ item.date }}</p>
+                </v-col>
+                <v-col cols="12"
+                  ><p class="title tX-color">เวลา: {{ item.time }}</p>
+                </v-col>
+                <v-col cols="12"
+                  ><p class="title tX-color">
+                    จำนวนผู้ลงสมัครอบรบ: {{ item.total }}
+                  </p>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-card>
   </div>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
 export default {
+  data() {
+    return {
+      detail: null,
+      items: [ {
+          name: "การปฐมพยาบาลและการกชีพเบื้องต้นในสัตว์เลี้ยง",
+        },
+        {
+          name: "การดูแลสุนัขเบื้องต้น",
+        },
+        {
+          name: "การใช้สมุนไพรในสัตว์",
+        },
+        {
+          name: "การดูแลแมวเบื้องต้น",
+        },
+          ],
+        addsubject:[
+ {
+          pic: require("~/assets/news.png"),
+          name: "การปฐมพยาบาลและการกชีพเบื้องต้นในสัตว์เลี้ยง",
+          date: "01/02/2024",
+          time: "9.00น.- 15.00น.",
+          total: "1/20 คน",
+        },
+        {
+          pic: require("~/assets/news.png"),
+          name: "การดูแลสุนัขเบื้องต้น",
+          date: "01/02/2024",
+          time: "9.00น.- 15.00น.",
+          total: "1/20 คน",
+        },
+        {
+          pic: require("~/assets/news.png"),
+          name: "การใช้สมุนไพรในสัตว์",
+          date: "01/02/2024",
+          time: "9.00น.- 15.00น.",
+          total: "1/20 คน",
+        },
+        {
+          pic: require("~/assets/news.png"),
+          name: "การดูแลแมวเบื้องต้น",
+          date: "01/02/2024",
+          time: "9.00น.- 15.00น.",
+          total: "1/20 คน",
+        },
+        ]
+    }
+
+  },
   methods: {
     ...mapMutations({
       SET_LOGIN: "users/SET_LOGIN",

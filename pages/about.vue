@@ -1,5 +1,6 @@
 <template>
   <div class="">
+     <Navbar />
     <v-img :aspect-ratio="19 / 1" :src="require('~/assets/b08knorpw71t.png')">
       <v-col cols="12" class="mt-8">
         <p class="display-2 text-center">
