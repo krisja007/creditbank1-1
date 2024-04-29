@@ -13,7 +13,7 @@
       <v-spacer></v-spacer>
       <div class="">
         <button class="mr-10" @click="teacherhome">หน้าหลัก</button>
-        <button class="mr-10" @click="train">เพิ่มกำหนดการอบรม</button>
+        <button class="mr-10" @click="addPost">เพิ่มกำหนดการอบรม</button>
         <button class="mr-10" @click="addpeople">
           เพิ่มรายชื่อผู้ผ้่นเกณฑ์
         </button>
@@ -41,8 +41,8 @@ export default {
     teacherhome() {
       this.$router.push("/Teacher/teacherhome");
     },
-    train() {
-      this.$router.push("/Teacher/train");
+    addPost() {
+      this.$router.push("/Teacher/addPost");
     },
     addpeople() {
       this.$router.push("/Teacher/addpeople");
