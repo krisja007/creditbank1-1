@@ -33,8 +33,8 @@
         </v-col>
       </v-row>
     </v-card>
-     <v-card
-          color="#2AF162"
+      <v-card
+          color="#D4FFCA"
           width="auto"
           class="mx-10 mt-10"
           rounded="xl"
@@ -46,23 +46,29 @@
               <v-card class="mx-3" rounded="lg">
                 <v-img :src="item.pic" width="auto" />
               </v-card>
+        
             </v-col>
             <v-col cols="7">
               <v-row>
                 <v-col cols="12">
                   <p class="title tX-color">ชื่อ: {{ item.name }}</p></v-col
                 >
+                <v-col cols="12">
+                  <p class="title tX-color">สถานที่เรียน: {{ item.location }}</p>
+                  </v-col>
                 <v-col cols="12"
                   ><p class="title tX-color">วันที่: {{ item.date }}</p>
                 </v-col>
                 <v-col cols="12"
                   ><p class="title tX-color">เวลา: {{ item.time }}</p>
                 </v-col>
-                <v-col cols="12"
+                <v-col cols="12" 
                   ><p class="title tX-color">
                     จำนวนผู้ลงสมัครอบรบ: {{ item.total }}
                   </p>
                 </v-col>
+                <v-btn class="" depressed color="red darken-2" @click="goHistory"
+            >ยกเลิก</v-btn>
               </v-row>
             </v-col>
           </v-row>
@@ -89,36 +95,17 @@ export default {
           name: "การดูแลแมวเบื้องต้น",
         },
           ],
-        addsubject:[
- {
-          pic: require("~/assets/news.png"),
-          name: "การปฐมพยาบาลและการกชีพเบื้องต้นในสัตว์เลี้ยง",
-          date: "01/02/2024",
-          time: "9.00น.- 15.00น.",
-          total: "1/20 คน",
-        },
+         postData: [
         {
-          pic: require("~/assets/news.png"),
-          name: "การดูแลสุนัขเบื้องต้น",
-          date: "01/02/2024",
-          time: "9.00น.- 15.00น.",
-          total: "1/20 คน",
-        },
-        {
-          pic: require("~/assets/news.png"),
+          pic: require("~/assets/pile-books-bookstore.jpg"),
           name: "การใช้สมุนไพรในสัตว์",
+          location:"Online",
           date: "01/02/2024",
           time: "9.00น.- 15.00น.",
           total: "1/20 คน",
+      
         },
-        {
-          pic: require("~/assets/news.png"),
-          name: "การดูแลแมวเบื้องต้น",
-          date: "01/02/2024",
-          time: "9.00น.- 15.00น.",
-          total: "1/20 คน",
-        },
-        ]
+      ]    
     }
 
   },

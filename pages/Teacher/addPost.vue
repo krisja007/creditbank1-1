@@ -4,7 +4,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" class="text-start">
-          <h2 class="display-1 t-green">หน้าเพิ่มกำหนดการอบรม</h2>
+          <h2 class="display-1 t-green text-center">หน้าเพิ่มกำหนดการอบรม</h2>
         </v-col>
         <v-col cols="12" class="text-start">
           <v-card
@@ -13,7 +13,13 @@
             elevation="8"
             rounded="xl"
           >
-            <h4 class="title">การอบรมความรู้เบื้องต้นเทคโนโลยี AI</h4>
+              <v-text-field
+            class="mt-1"
+            outlined
+            label="เพิ่มห้วการอบรม"
+            v-model="nameSubject"
+            
+          ></v-text-field>
           </v-card>
         </v-col>
 
@@ -27,13 +33,14 @@
             elevation="8"
             rounded="xl"
           >
-            <h4 class="title">
-              เป็นการอบรมเพื่อให้ความรู้เกี่ยวกับเทคโนโลยี AI และการนำเทคโนโลยี
-              AI ไปประยุกต์ใช้ในด้านสายงานต่างๆ
-              สามารถเข้ามาติดต่อเพื่อลงทะเบียนอบรมได้ที่: ใต้ตึก จุฬา
-              คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยแม่โจ้
-              เบอร์โทรสอบถาม 091-111-222
-            </h4>
+            <v-text-field
+            class="mt-1"
+            outlined
+            label="เพิ่มข้อมูลรายวิชา"
+            v-model="detailSub">
+          
+
+            </v-text-field>
           </v-card>
         </v-col>
         <v-col cols="6" class="">

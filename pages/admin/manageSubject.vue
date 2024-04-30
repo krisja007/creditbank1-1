@@ -1,6 +1,11 @@
 <template>
-  <div class="">
+  <div >
     <NavbarAd />
+  <v-card depressed color="light-green lighten-4 " class="mx-100"
+            width="100%"
+            elevation="8"
+            rounded="xl"
+  >
     <v-row>
          <v-col class="">
       <v-btn class="headline pa-7" width="100%" elevation="5" @click="goadminpage">
@@ -11,6 +16,7 @@
         manageSubject
       </v-col>
     </v-row>
+    </v-card>
   </div>
 </template>
 

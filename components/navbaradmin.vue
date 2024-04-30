@@ -73,21 +73,21 @@ export default {
               icon: "mdi-wrench",
               to: "/admin/manageusers",
             },
-            {
-              title: "ดูจำนวนผู้ใช้งานในระบบ",
-              icon: "mdi-wrench",
-              to: "/admin/managecer",
-            },
+            // {
+            //   title: "ดูจำนวนผู้ใช้งานในระบบ",
+            //   icon: "mdi-wrench",
+            //   to: "/admin/managecer",
+            // },
             {
               title: "จัดการโพสต์",
               icon: "mdi-wrench",
               to: "/admin/manageSubject",
             },
-            {
-              title: "เพิ่มเนื้อหาข่าวสาร",
-              icon: "mdi-wrench",
-              to: "/admin/manageNews",
-            },
+            // {
+            //   title: "เพิ่มเนื้อหาข่าวสาร",
+            //   icon: "mdi-wrench",
+            //   to: "/admin/manageNews",
+            // },
           ],
         },
         { title: "ออกจากระบบ", icon: "mdi-logout" },
