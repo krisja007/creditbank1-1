@@ -23,9 +23,9 @@ class Register {
     Online
   ) {
     const query = `INSERT INTO USER (Name,Nameeng,Lastname,Lastnameeng,Username,Password,IDCard,School,Levelc,Tel,Title,Titleeng,Role, Email, Online) VALUES ("${Name}","${Nameeng}","${Lastname}","${Lastnameeng}","${Username}","${hashPass}","${IDCard}","${School}","${Levelc}","${Tel}","${Title}","${Titleeng}","${Role}", "${Email}", ${Online})`;
-    console.log(query);
     return sqlcmd(query);
   }
+
 }
 
 module.exports = Register;
