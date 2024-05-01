@@ -67,8 +67,10 @@
                     จำนวนผู้ลงสมัครอบรบ: {{ item.total }}
                   </p>
                 </v-col>
-                <v-btn class="" depressed color="red darken-2" @click="goHistory"
-            >ยกเลิก</v-btn>
+                 <v-btn class="" depressed color="success" @click="goHistory"
+            >ลงทะเบียน</v-btn>
+                <v-btn class="ml-6" depressed color="red darken-2" @click="goHistory"
+              >ยกเลิก</v-btn>
               </v-row>
             </v-col>
           </v-row>

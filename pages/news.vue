@@ -19,20 +19,23 @@
         
             </v-col>
             <v-col cols="7">
-              <v-row>
-                <v-col cols="12">
+              <v-row no-gutters>
+                <v-col cols="7">
                   <p class="title tX-color">ชื่อ: {{ item.name }}</p></v-col
                 >
-                <v-col cols="12">
+                <v-col cols="7">
+                  <p class="title tX-color">อาจารย์ผู้สอน: {{ item.teacher }}</p>
+                  </v-col>
+                <v-col cols="7">
                   <p class="title tX-color">สถานที่เรียน: {{ item.location }}</p>
                   </v-col>
-                <v-col cols="12"
+                <v-col cols="7"
                   ><p class="title tX-color">วันที่: {{ item.date }}</p>
                 </v-col>
-                <v-col cols="12"
+                <v-col cols="7"
                   ><p class="title tX-color">เวลา: {{ item.time }}</p>
                 </v-col>
-                <v-col cols="12"
+                <v-col cols="7"
                   ><p class="title tX-color">
                     จำนวนผู้ลงสมัครอบรบ: {{ item.total }}
                   </p>
@@ -57,8 +60,9 @@ export default {
     return {
       postData: [
         {
-          pic: require("~/assets/pile-books-bookstore.jpg"),
+          pic: require("~/assets/Captureddddddddddddddddd.png"),
           name: "การใช้สมุนไพรในสัตว์",
+          teacher:"ผสุ เย็นสบาย",
           location:"Online",
           date: "01/02/2024",
           time: "9.00น.- 15.00น.",
