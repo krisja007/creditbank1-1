@@ -18,6 +18,7 @@ app.use('/image', express.static(__dirname + '/uploads'))
 
 //router login and register
 app.use('/reg', require('./route/registerRoute'))
+app.use('/sub', require('./route/subjectRoute'))
 
 
 // app.use(Autenticate)

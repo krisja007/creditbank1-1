@@ -13,13 +13,12 @@
             elevation="8"
             rounded="xl"
           >
-              <v-text-field
-            class="mt-1"
-            outlined
-            label="เพิ่มห้วการอบรม"
-            v-model="nameSubject"
-            
-          ></v-text-field>
+            <v-text-field
+              class="mt-1 mx-10"
+              outlined
+              label="เพิ่มห้วการอบรม"
+              v-model="nameSubject"
+            ></v-text-field>
           </v-card>
         </v-col>
 
@@ -34,43 +33,46 @@
             rounded="xl"
           >
             <v-text-field
-            class="mt-1"
-            outlined
-            label="เพิ่มข้อมูลรายวิชา"
-            v-model="detailSub">
-          
-
+              class="mt-1 mx-10"
+              outlined
+              label="เพิ่มข้อมูลรายวิชา"
+              v-model="detailSub"
+            >
             </v-text-field>
           </v-card>
         </v-col>
         <v-col cols="6" class="">
           <div class="mx-auto" style="width: 100%">
-            <v-select outlined label="วัน/เดือน/ปี"></v-select>
+            <v-text-field
+              type="date"
+              outlined
+              label="วัน/เดือน/ปี"
+              v-model="date"
+            ></v-text-field>
           </div>
         </v-col>
         <v-col cols="6" class="">
           <div class="mx-auto" style="width: 100%">
-            <v-select outlined label="เวลาเริ่มต้น"></v-select>
+            <v-text-field
+              outlined
+              label="กำหนดจำนวนผู้เรียน"
+              v-model="totalStu"
+            ></v-text-field>
           </div>
         </v-col>
         <v-col cols="6" class="">
           <div class="mx-auto" style="width: 100%">
-            <v-select outlined label="กำหนดจำนวนผู้เรียน"></v-select>
-          </div>
-        </v-col>
-        <v-col cols="6" class="">
-          <div class="mx-auto" style="width: 100%">
-            <v-select outlined label="เวลาจบอบรม"></v-select>
-          </div>
-        </v-col>
-        <v-col cols="6" class="">
-          <div class="mx-auto" style="width: 100%">
-            <v-select outlined label="กำหนดหน่วยกิต"></v-select>
+            <v-text-field
+              type="time"
+              outlined
+              label="เวลาเริ่มอบรม"
+              v-model="time"
+            ></v-text-field>
           </div>
         </v-col>
         <v-col cols="6" class=""> </v-col>
         <v-col cols="12" class="">
-          <v-btn color="green" block>ยืนยัน</v-btn>
+          <v-btn color="green" block @click="confirmSubject">ยืนยัน</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -78,7 +80,51 @@
 </template>
 
 <script>
-export default {};
+import { mapActions } from "vuex";
+export default {
+  data() {
+    return {
+      nameSubject: null,
+      detailSub: null,
+      date: null,
+      totalStu: null,
+      time: null,
+    };
+  },
+  methods: {
+    ...mapActions({
+      addSub: "users/addSub",
+    }),
+    confirmSubject() {
+      
+      this.addSub({
+        NAMESUBJECT: this.nameSubject,
+        DETAILSUBJECT: this.detailSub,
+        DATE: this.date,
+        TIME: this.time,
+        TOTALSTU: this.totalStu,
+      })
+        .then(() => {
+          this.$swal({
+            position: "center",
+            icon: "success",
+            title: "ลงทะเบียนสำเร็จ",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          console.log(res);
+          this.nameSubject = null;
+          this.detailSub = null;
+          this.date = null;
+          this.time = null;
+          this.totalStu = null;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+  },
+};
 </script>
 
 <style>
