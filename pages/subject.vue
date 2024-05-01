@@ -49,7 +49,7 @@
         
             </v-col>
             <v-col cols="7">
-              <v-row>
+              <v-row no-gutters>
                 <v-col cols="12">
                   <p class="title tX-color">ชื่อ: {{ item.name }}</p></v-col
                 >
@@ -99,7 +99,7 @@ export default {
           ],
          postData: [
         {
-          pic: require("~/assets/pile-books-bookstore.jpg"),
+          pic: require("~/assets/Captureddddddddddddddddd.png"),
           name: "การใช้สมุนไพรในสัตว์",
           location:"Online",
           date: "01/02/2024",

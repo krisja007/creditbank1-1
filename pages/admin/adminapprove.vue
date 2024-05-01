@@ -26,7 +26,7 @@
           v-for="(item, admin) in approve"
           :key="admin"
         >
-          <v-row>
+          <v-row no-gutters>
             <v-col cols="6" class="pl-10">
               <p class="title tX-color">ชื่อ: {{ item.name }}</p>
               <p class="title mr-10">สถานะ: {{ item.role }}</p>
