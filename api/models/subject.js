@@ -10,7 +10,9 @@ class SUBJECT {
     return sqlcmd(query);
   }
 
-  
+  static selectSubject() {
+    const query = `SELECT ... FROM SUBJECT WHERE POSTSTATUS = 0`
+  }
 }
 
 module.exports = SUBJECT;
