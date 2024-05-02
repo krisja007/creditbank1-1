@@ -1,6 +1,7 @@
 <template>
   <div class="" >
     <NavbarAd />
+<<<<<<< HEAD
   <v-container  class="green darken-4 mx-auto">
 
         <h1 class="mx-auto text-center white--text" >จำนวนคำร้องขอเปิดสร้างโพสต์</h1>
@@ -22,6 +23,13 @@
                <p class="font-weight-medium white--text">รายละเอียด</p> 
               </v-btn>
             </v-card-actions>
+=======
+    <v-row>
+  <v-container>
+      <v-card depressed color="green lighten-2">
+        <h3 class="ml-6">จำนวนผู้ใช้ที่ออนไลน์</h3>   
+        <h3 class="ml-6">จำนวนผู้ใช้ที่สมัครใช้งานใหม่วันนี้</h3>
+>>>>>>> 6d74dc8e686b29779c219e9104d7b37d9bf62318
       </v-card>
       </v-col>
 
@@ -65,6 +73,15 @@
       </v-col>
       
     </v-container>
+<<<<<<< HEAD
+=======
+    </v-row>
+    <v-container>
+      <v-card depressed color="green lighten-2">
+     <p class="display-1 text-center">จำนวนคำร้องขอเปิดสร้างโพสต์</p>
+      </v-card>
+    </v-container>
+>>>>>>> 6d74dc8e686b29779c219e9104d7b37d9bf62318
   </div>
 </template>
 
@@ -89,6 +106,10 @@ export default {
 };
 </script>
 
+<<<<<<< HEAD
 <style>
 
+=======
+<style scoped>
+>>>>>>> 6d74dc8e686b29779c219e9104d7b37d9bf62318
 </style>

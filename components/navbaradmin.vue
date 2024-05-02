@@ -43,6 +43,7 @@ export default {
       selectedItem: "",
       items: [
         {
+<<<<<<< HEAD
           title: "Menu Admin",
           icon: "mdi-cog",
           nested: true,
@@ -51,27 +52,45 @@ export default {
               title: "หน้าหลัก",
               icon: "mdi-home",
               to: "/admin/adminpage",
+=======
+          title: "จัดการระบบ",
+          icon: "mdi-cog",
+          nested: true,
+          subitems: [
+                {
+              title: "จัดการสิทธิ์การสร้างโพสต์อบรม",
+              icon: "mdi-wrench",
+              to: "/admin/adminapprove",
+>>>>>>> 6d74dc8e686b29779c219e9104d7b37d9bf62318
             },
             {
               title: "แก้ไขข้อมูลของผู้ใช้",
               icon: "mdi-account",
               to: "/admin/manageusers",
             },
+<<<<<<< HEAD
             {
               title: "เปิดสิทธิ์การสร้างโพสต์ของอาจารย์",
               icon: "mdi-wrench",
               to: "/admin/managecer",
             },
+=======
+            // {
+            //   title: "ดูจำนวนผู้ใช้งานในระบบ",
+            //   icon: "mdi-wrench",
+            //   to: "/admin/managecer",
+            // },
+>>>>>>> 6d74dc8e686b29779c219e9104d7b37d9bf62318
             {
               title: "จัดการโพสต์",
               icon: "mdi-wrench",
               to: "/admin/manageSubject",
             },
-            {
-              title: "เพิ่มเนื้อหาข่าวสาร",
-              icon: "mdi-wrench",
-              to: "/admin/manageNews",
-            },
+            // {
+            //   title: "เพิ่มเนื้อหาข่าวสาร",
+            //   icon: "mdi-wrench",
+            //   to: "/admin/manageNews",
+            // },
           ],
         },
         { title: "ออกจากระบบ", icon: "mdi-logout" },

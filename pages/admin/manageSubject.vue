@@ -1,6 +1,7 @@
 <template>
-  <div class="">
+  <div >
     <NavbarAd />
+<<<<<<< HEAD
     <h1 class="text-center">หน้าจัดการโพสต์ของ Admin</h1>
 
     <v-row row="10" justify="center">
@@ -60,6 +61,25 @@
       </v-col>
     </v-row>
 
+=======
+  <v-card depressed color="light-green lighten-4 " class="mx-100"
+            width="100%"
+            elevation="8"
+            rounded="xl"
+  >
+    <v-row>
+         <v-col class="">
+      <v-btn class="headline pa-7" width="100%" elevation="5" @click="goadminpage">
+        <v-icon large>mdi mdi-home</v-icon>กลับสู่หน้าหลักแอดมิน
+      </v-btn>
+    </v-col>
+    
+      <v-col cols="12">
+        manageSubject
+      </v-col>
+    </v-row>
+    </v-card>
+>>>>>>> 6d74dc8e686b29779c219e9104d7b37d9bf62318
   </div>
 </template>
 
@@ -83,6 +103,10 @@ export default {
     ...mapMutations({
       SET_LOGIN: "users/SET_LOGIN",
     }),
+     goadminpage() {
+      this.$router.push("/admin/adminpage");
+      this.citizenID = "";
+    }, 
   },
 };
 </script>

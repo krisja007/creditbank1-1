@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <v-main>
     <v-container >
       <NavbarAd />
@@ -33,6 +34,21 @@
 
     </v-container>
   </v-main>
+=======
+  <div class="">
+    <NavbarAd />
+    <v-row>
+         <v-col class="">
+      <v-btn class="headline pa-7" width="100%" elevation="5" @click="goadminpage">
+        <v-icon large>mdi mdi-home</v-icon>กลับสู่หน้าหลักแอดมิน
+      </v-btn>
+    </v-col>
+      <v-col cols="12">
+        manageCer
+      </v-col>
+    </v-row>
+  </div>
+>>>>>>> 6d74dc8e686b29779c219e9104d7b37d9bf62318
 </template>
 
 <script>
@@ -52,6 +68,10 @@ export default {
     ...mapMutations({
       SET_LOGIN: "users/SET_LOGIN",
     }),
+     goadminpage() {
+      this.$router.push("/admin/adminpage");
+      this.citizenID = "";
+    }, 
   },
 };
 </script>

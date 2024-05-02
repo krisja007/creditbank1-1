@@ -164,6 +164,8 @@ export default {
       // } catch (error) {
       //   console.error("เกิดข้อผิดพลาดในการตรวจสอบผู้ใช้:", error);
       // }
+    //     this.$router.push("/Teacher/teacherhome"); 
+    // },
       this.$router.push("/admin/adminpage"); 
     },
 
