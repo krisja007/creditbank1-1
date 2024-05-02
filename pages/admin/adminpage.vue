@@ -1,20 +1,70 @@
 <template>
-  <div class="">
+  <div class="" >
     <NavbarAd />
-    <v-row>
-  <v-container>
-      <v-card depressed color="grey lighten-2">
-        <h1 class="ml-6">หลักสูตรสะสมหน่วยกิต(Credit Bank)</h1>
-        <h2 class="ml-6">
-          การสะสมหน่วยการเรียนรู้ ( Credit Bank) หรือ ธนาคารหน่วยกิต
-          เป็นการเปิดโอกาสให้ผู้เรียนและประชาชนได้เรียนและทำงานไปในเวลาเดียวกันโดยสามารถนําผลการเรียนรู้
-          หรือการฝึกอบรมเปิดสอนอยู่ทั้งในระดับปริญญาตรีและบัณฑิตศึกษาเป็นการตอบโจทย์นักเรียนและบุคคลทั่วไปที่มีแผนจะเข้ามาศึกษาต่อที่สถาบันฯ
-          หรือผู้ที่สนใจเพิ่มพูนความรู้และพัฒนาทักษะตลอด
-          นักศึกษาจนการเรียนรู้ตลอดชีพ
-        </h2>
+  <v-container  class="green darken-4 mx-auto">
+
+        <h1 class="mx-auto text-center white--text" >จำนวนคำร้องขอเปิดสร้างโพสต์</h1>
+      <v-spacer></v-spacer>
+      
+      <v-col cols="12">
+        <v-card color="mx-auto text-center green darken-1" elevation="10">
+        <v-card-title >
+          <h1  class="text-lg-h6 white--text"> รายชื่อผู้ขอเปิดสิทธิ์: อาจารย์ แสนดี เดินไม่หนีห่าง </h1>
+            </v-card-title>
+            <v-card-title>
+              <h1 class="pt-n2  text-lg-h6 white--text "> ชื่อการเรียนรู้: การอบรมเทคโนโลยี Ai </h1>
+            </v-card-title>
+            <v-card-title>
+              <h1 class="pt-n2  text-lg-h6 white--text "> วัน/เดือน/ปี: 05/03/2024 </h1>
+            </v-card-title>
+            <v-card-actions>
+              <v-btn color="green darken-3 text-center">
+               <p class="font-weight-medium white--text">รายละเอียด</p> 
+              </v-btn>
+            </v-card-actions>
       </v-card>
+      </v-col>
+
+      <v-col cols="12">
+        <v-card class="mt-5" color="mx-auto text-center green darken-1" elevation="10">
+        <v-card-title >
+          <h1  class="text-lg-h6 white--text"> รายชื่อผู้ขอเปิดสิทธิ์: อาจารย์ แสนดี เดินไม่หนีห่าง </h1>
+            </v-card-title>
+            <v-card-title>
+              <h1 class="pt-n2  text-lg-h6 white--text "> ชื่อการเรียนรู้: การอบรมเทคโนโลยี Ai </h1>
+            </v-card-title>
+            <v-card-title>
+              <h1 class="pt-n2  text-lg-h6 white--text "> วัน/เดือน/ปี: 05/03/2024 </h1>
+            </v-card-title>
+            <v-card-actions>
+              <v-btn color="green darken-3 text-center">
+               <p class="font-weight-medium white--text">รายละเอียด</p> 
+              </v-btn>
+            </v-card-actions>
+      </v-card>
+
+      </v-col>
+
+      <v-col cols="12">
+        <v-card class="mt-5" color="mx-auto text-center green darken-1" elevation="10">
+        <v-card-title >
+          <h1  class="text-lg-h6 white--text"> รายชื่อผู้ขอเปิดสิทธิ์: อาจารย์ แสนดี เดินไม่หนีห่าง </h1>
+            </v-card-title>
+            <v-card-title>
+              <h1 class="pt-n2  text-lg-h6 white--text "> ชื่อการเรียนรู้: การอบรมเทคโนโลยี Ai </h1>
+            </v-card-title>
+            <v-card-title>
+              <h1 class="pt-n2  text-lg-h6 white--text "> วัน/เดือน/ปี: 05/03/2024 </h1>
+            </v-card-title>
+            <v-card-actions>
+              <v-btn color="green darken-3 text-center">
+               <p class="font-weight-medium white--text">รายละเอียด</p> 
+              </v-btn>
+            </v-card-actions>
+      </v-card>
+      </v-col>
+      
     </v-container>
-    </v-row>
   </div>
 </template>
 
@@ -40,4 +90,5 @@ export default {
 </script>
 
 <style>
+
 </style>
